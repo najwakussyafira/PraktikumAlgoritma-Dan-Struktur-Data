@@ -1,51 +1,58 @@
 package Praktikum3;
 
 public class DataDosen14 {
-        // Method untuk menampilkan semua data dosen
         public void dataSemuaDosen(Dosen14[] arrayOfDosen) {
+            System.out.println(" =========================== ");
+            System.out.println("        DATA DOSEN           ");
+            System.out.println(" =========================== ");
             for (Dosen14 dosen : arrayOfDosen) {
-                dosen.tampilkanInfo();  // Memanggil method tampilkanInfo() untuk setiap objek Dosen
+                dosen.tampilkanInfo();  
             }
         }
-    
-        // Method untuk menampilkan jumlah dosen berdasarkan jenis kelamin
         public void jumlahDosenPerJenisKelamin(Dosen14[] arrayOfDosen) {
-            int pria = 0, wanita = 0;
-            for (Dosen14 dosen : arrayOfDosen) {
-                if (dosen.jenisKelamin) {
-                    pria++;
+            System.out.println(" =========================== ");
+            System.out.println("         DATA DOSEN          ");
+            System.out.println(" (Bedasarkan Jenis Kelamin)  ");
+            System.out.println(" =========================== ");
+
+            int hitungpria = 0;
+            int hitungwanita = 0;
+
+            for (Dosen14 dosen14 : arrayOfDosen) {
+                if (dosen14.jenisKelamin) {
+                    hitungpria++;
                 } else {
-                    wanita++;
+                    hitungwanita++;
                 }
             }
-            System.out.println("Jumlah Dosen Pria     : " + pria);
-            System.out.println("Jumlah Dosen Wanita   : " + wanita);
+            System.out.println("Jumlah Dosen Pria     : " + hitungpria);
+            System.out.println("Jumlah Dosen Wanita   : " + hitungwanita);
         }
     
         // Method untuk menampilkan rata-rata usia dosen berdasarkan jenis kelamin
         public void rerataUsiaDosenPerJenisKelamin(Dosen14[] arrayOfDosen) {
+            System.out.println("=======================================================");
+            System.out.println("Rata-rata usia dosen (per jenis kelamin Wanita/pria) : ");
             int priaUsia = 0, wanitaUsia = 0;
-            int priaCount = 0, wanitaCount = 0;
+            int hitungpria = 0, hitungwanita = 0;
     
             for (Dosen14 dosen : arrayOfDosen) {
                 if (dosen.jenisKelamin) {
                     priaUsia += dosen.usia;
-                    priaCount++;
+                    hitungpria++;
                 } else {
                     wanitaUsia += dosen.usia;
-                    wanitaCount++;
+                    hitungwanita++;
                 }
             }
     
-            if (priaCount > 0) {
-                System.out.println("Rata-rata usia Dosen Pria: " + (priaUsia / priaCount));
+            if (hitungpria > 0) {
+                System.out.println("Rata-rata usia Dosen Pria: " + (priaUsia / hitungpria));
             }
-            if (wanitaCount > 0) {
-                System.out.println("Rata-rata usia Dosen Wanita: " + (wanitaUsia / wanitaCount));
+            if (hitungwanita > 0) {
+                System.out.println("Rata-rata usia Dosen Wanita: " + (wanitaUsia / hitungwanita));
             }
         }
-    
-        // Method untuk menampilkan data dosen paling tua
         public void infoDosenPalingTua(Dosen14[] arrayOfDosen) {
             Dosen14 dosenTua = arrayOfDosen[0];
     
@@ -54,12 +61,9 @@ public class DataDosen14 {
                     dosenTua = dosen;
                 }
             }
-    
             System.out.println("Dosen Paling Tua:");
             dosenTua.tampilkanInfo();
         }
-    
-        // Method untuk menampilkan data dosen paling muda
         public void infoDosenPalingMuda(Dosen14[] arrayOfDosen) {
             Dosen14 dosenMuda = arrayOfDosen[0];
     
@@ -68,7 +72,6 @@ public class DataDosen14 {
                     dosenMuda = dosen;
                 }
             }
-    
             System.out.println("Dosen Paling Muda:");
             dosenMuda.tampilkanInfo();
         }

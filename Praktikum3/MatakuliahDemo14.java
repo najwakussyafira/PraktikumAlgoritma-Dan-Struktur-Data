@@ -4,13 +4,10 @@ public class MatakuliahDemo14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Minta input dari user untuk menentukan jumlah data Matakuliah
         System.out.print("Masukkan jumlah matakuliah yang akan diinput: ");
         int jumlahMatakuliah = sc.nextInt();
         sc.nextLine();
-
         Matakuliah14[] arrayOfMatakuliah = new Matakuliah14[jumlahMatakuliah];
-
         String kode, nama, dummy;
         int sks, jumlahJam;
 

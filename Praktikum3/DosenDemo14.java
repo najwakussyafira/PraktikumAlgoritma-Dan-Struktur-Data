@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class DosenDemo14 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc14 = new Scanner(System.in);
         String kode, nama;
         boolean jenisKelamin;
         int usia;
 
         // Minta input dari user untuk jumlah dosen yang akan dimasukkan
         System.out.print("Masukkan jumlah dosen yang akan diinput: ");
-        int jumlahDosen = Integer.parseInt(sc.nextLine());
+        int jumlahDosen = Integer.parseInt(sc14.nextLine());
 
         // Membuat array of Dosen dengan jumlah sesuai input dari user
         Dosen14[] arrayOfDosen = new Dosen14[jumlahDosen];
@@ -20,13 +20,13 @@ public class DosenDemo14 {
         for (int i = 0; i < jumlahDosen; i++) {
             System.out.println("Masukkan Data Dosen ke-" + (i + 1));
             System.out.print("Kode             : ");
-            kode = sc.nextLine();
+            kode = sc14.nextLine();
             System.out.print("Nama             : ");
-            nama = sc.nextLine();
+            nama = sc14.nextLine();
             System.out.print("Jenis Kelamin    : ");
-            jenisKelamin = Boolean.parseBoolean(sc.nextLine());
+            jenisKelamin = Boolean.parseBoolean(sc14.nextLine());
             System.out.print("Usia             : ");
-            usia = Integer.parseInt(sc.nextLine());
+            usia = Integer.parseInt(sc14.nextLine());
             System.out.println("-----------------------------------");
             arrayOfDosen[i] = new Dosen14(kode, nama, jenisKelamin, usia);
         }
@@ -34,6 +34,7 @@ public class DosenDemo14 {
         for (Dosen14 dosen : arrayOfDosen) {
             dosen.tampilkanInfo();  // Memanggil method tampilkanInfo untuk setiap objek Dosen
         }
+        sc14.close();
         }
     }
 
