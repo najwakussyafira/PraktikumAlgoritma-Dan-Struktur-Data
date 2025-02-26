@@ -20,40 +20,44 @@ public class DataDosen14 {
 
             for (Dosen14 dosen14 : arrayOfDosen) {
                 if (dosen14.jenisKelamin) {
-                    hitungpria++;
-                } else {
                     hitungwanita++;
+                } else {
+                    hitungpria++;
                 }
             }
-            System.out.println("Jumlah Dosen Pria     : " + hitungpria);
             System.out.println("Jumlah Dosen Wanita   : " + hitungwanita);
+            System.out.println("Jumlah Dosen Pria     : " + hitungpria);
         }
-    
-        // Method untuk menampilkan rata-rata usia dosen berdasarkan jenis kelamin
+
         public void rerataUsiaDosenPerJenisKelamin(Dosen14[] arrayOfDosen) {
             System.out.println("=======================================================");
-            System.out.println("Rata-rata usia dosen (per jenis kelamin Wanita/pria) : ");
-            int priaUsia = 0, wanitaUsia = 0;
-            int hitungpria = 0, hitungwanita = 0;
+            System.out.println("Rata-rata usia dosen (per jenis kelamin Wanita/Pria) : ");
+
+            int usiapria = 0;
+            int hitungpria = 0;
+            int usiawanita = 0;
+            int hitungwanita = 0;
     
             for (Dosen14 dosen : arrayOfDosen) {
                 if (dosen.jenisKelamin) {
-                    priaUsia += dosen.usia;
+                    usiapria += dosen.usia;
                     hitungpria++;
                 } else {
-                    wanitaUsia += dosen.usia;
+                    usiawanita += dosen.usia;
                     hitungwanita++;
                 }
             }
     
             if (hitungpria > 0) {
-                System.out.println("Rata-rata usia Dosen Pria: " + (priaUsia / hitungpria));
+                System.out.println("Rata-rata usia Dosen Pria: " + (usiapria / hitungpria));
             }
             if (hitungwanita > 0) {
-                System.out.println("Rata-rata usia Dosen Wanita: " + (wanitaUsia / hitungwanita));
+                System.out.println("Rata-rata usia Dosen Wanita: " + (usiawanita / hitungwanita));
             }
         }
+    
         public void infoDosenPalingTua(Dosen14[] arrayOfDosen) {
+            if (arrayOfDosen.length == 0) return;
             Dosen14 dosenTua = arrayOfDosen[0];
     
             for (Dosen14 dosen : arrayOfDosen) {
@@ -65,9 +69,11 @@ public class DataDosen14 {
             dosenTua.tampilkanInfo();
         }
         public void infoDosenPalingMuda(Dosen14[] arrayOfDosen) {
+            if (arrayOfDosen.length == 0) return;
             Dosen14 dosenMuda = arrayOfDosen[0];
-    
+
             for (Dosen14 dosen : arrayOfDosen) {
+                dosenMuda = dosen;
                 if (dosen.usia < dosenMuda.usia) {
                     dosenMuda = dosen;
                 }

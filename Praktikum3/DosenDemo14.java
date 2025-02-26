@@ -5,36 +5,40 @@ import java.util.Scanner;
 public class DosenDemo14 {
     public static void main(String[] args) {
         Scanner sc14 = new Scanner(System.in);
-        String kode, nama;
+        int jumlahDosen;
+
+        System.out.print("Masukkan jumlah dosen yang akan diinput: ");
+        jumlahDosen = sc14.nextInt();
+        sc14.nextLine();
+        Dosen14[] arrayOfDosen = new Dosen14[jumlahDosen];
+        String kode, nama, dummy;
         boolean jenisKelamin;
         int usia;
 
-        // Minta input dari user untuk jumlah dosen yang akan dimasukkan
-        System.out.print("Masukkan jumlah dosen yang akan diinput: ");
-        int jumlahDosen = Integer.parseInt(sc14.nextLine());
-
-        // Membuat array of Dosen dengan jumlah sesuai input dari user
-        Dosen14[] arrayOfDosen = new Dosen14[jumlahDosen];
-
-        // Loop untuk memasukkan data dosen
-        for (int i = 0; i < jumlahDosen; i++) {
+        for (int i = 0; i < arrayOfDosen.length; i++) {
             System.out.println("Masukkan Data Dosen ke-" + (i + 1));
-            System.out.print("Kode             : ");
+            System.out.print("Kode                   : ");
             kode = sc14.nextLine();
-            System.out.print("Nama             : ");
+            System.out.print("Nama                   : ");
             nama = sc14.nextLine();
-            System.out.print("Jenis Kelamin    : ");
-            jenisKelamin = Boolean.parseBoolean(sc14.nextLine());
-            System.out.print("Usia             : ");
-            usia = Integer.parseInt(sc14.nextLine());
+            System.out.print("Jenis Kelamin (P/L)   : ");
+            char jk = sc14.nextLine().charAt(0);
+            jenisKelamin = (jk == 'L' || jk == 'l');
+            System.out.print("Usia                   : ");
+            dummy = sc14.nextLine();
+            usia = Integer.parseInt(dummy);
             System.out.println("-----------------------------------");
             arrayOfDosen[i] = new Dosen14(kode, nama, jenisKelamin, usia);
         }
-        // Menampilkan data dosen yang telah dimasukkan menggunakan looping foreach
         for (Dosen14 dosen : arrayOfDosen) {
-            dosen.tampilkanInfo();  // Memanggil method tampilkanInfo untuk setiap objek Dosen
+            dosen.tampilkanInfo();  
         }
-        sc14.close();
+        DataDosen14 dataDosen = new DataDosen14();
+        dataDosen.dataSemuaDosen(arrayOfDosen);
+        dataDosen.jumlahDosenPerJenisKelamin(arrayOfDosen);
+        dataDosen.rerataUsiaDosenPerJenisKelamin(arrayOfDosen);
+        dataDosen.infoDosenPalingTua(arrayOfDosen);
+        dataDosen.infoDosenPalingMuda(arrayOfDosen);
         }
     }
 

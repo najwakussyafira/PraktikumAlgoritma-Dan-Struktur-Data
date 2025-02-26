@@ -20,13 +20,11 @@ class MahasiswaDemo14 {
             arrayOfMahasiswa[i].ipk = Float.parseFloat(dummy);
             System.out.println("-----------------------------------");
         }
-            // Menampilkan data mahasiswa menggunakan method cetakInfo()
         for (int i = 0; i < 3; i++) {
             System.out.println("Data Mahasiswa ke-" + (i + 1));
-            arrayOfMahasiswa[i].cetakInfo();  // Memanggil method cetakInfo() untuk menampilkan informasi mahasiswa
+            arrayOfMahasiswa[i].cetakInfo();  
         
         }
-        // Menampilkan data mahasiswa
         for (int i = 0; i < 3; i++) {
             System.out.println("Data Mahasiswa ke-" + (i + 1));
             System.out.println("NIM    : " + arrayOfMahasiswa[i].nim);

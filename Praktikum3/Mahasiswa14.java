@@ -5,8 +5,7 @@ public class Mahasiswa14 {
     public String nama;
     public String kelas;
     public float ipk;
-
-    // Menambahkan method cetakInfo() untuk menampilkan informasi mahasiswa
+    
     public void cetakInfo() {
         System.out.println("NIM    : " + this.nim);
         System.out.println("Nama   : " + this.nama);

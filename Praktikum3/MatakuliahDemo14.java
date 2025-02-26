@@ -24,16 +24,13 @@ public class MatakuliahDemo14 {
             jumlahJam = Integer.parseInt(dummy);
             System.out.println("-----------------------------------");
 
-            // Menggunakan method tambahData() untuk menambahkan data
             arrayOfMatakuliah[i] = new Matakuliah14(kode, nama, sks, jumlahJam);
             arrayOfMatakuliah[i].tambahData(kode, nama, sks, jumlahJam);
         }
         
-         // Menampilkan data yang telah dimasukkan menggunakan method cetakInfo
          for (int i = 0; i < jumlahMatakuliah; i++) {
             System.out.println("Data Matakuliah ke-" + (i + 1));
-            arrayOfMatakuliah[i].cetakInfo();  // Memanggil method cetakInfo() untuk menampilkan data
-
+            arrayOfMatakuliah[i].cetakInfo();  
     }
     sc.close();
 }
