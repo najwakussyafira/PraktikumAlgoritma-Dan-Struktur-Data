@@ -21,7 +21,7 @@ public class DosenDemo14 {
             kode = sc14.nextLine();
             System.out.print("Nama                   : ");
             nama = sc14.nextLine();
-            System.out.print("Jenis Kelamin (P/L)   : ");
+            System.out.print("Jenis Kelamin (P/L)    : ");
             char jk = sc14.nextLine().charAt(0);
             jenisKelamin = (jk == 'L' || jk == 'l');
             System.out.print("Usia                   : ");
@@ -39,6 +39,8 @@ public class DosenDemo14 {
         dataDosen.rerataUsiaDosenPerJenisKelamin(arrayOfDosen);
         dataDosen.infoDosenPalingTua(arrayOfDosen);
         dataDosen.infoDosenPalingMuda(arrayOfDosen);
+
+        sc14.close();
         }
     }
 
